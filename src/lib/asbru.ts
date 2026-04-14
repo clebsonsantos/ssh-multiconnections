@@ -7,7 +7,7 @@ interface AsBruEntry {
   ip?: string;
   port?: number;
   user?: string;
-  pass?: string;
+  pass?: string | number;
   "auth type"?: string;
   "public key"?: string;
   passphrase?: string;
@@ -91,7 +91,7 @@ export function parseAsbruYaml(content: string): {
       port: entry.port ?? 22,
       username: entry.user ?? "",
       authType,
-      password: entry.pass ?? "",
+      password: String(entry.pass ?? ""),
       privateKey: entry["public key"] ?? "",
       passphrase: entry.passphrase ?? "",
       jumpHost,
