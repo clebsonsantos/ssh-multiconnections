@@ -73,3 +73,5 @@ ehthumbs.db
 .cache/
 dist/
 asbru_export.yml
+src-tauri/icons/android
+src-tauri/icons/ios
